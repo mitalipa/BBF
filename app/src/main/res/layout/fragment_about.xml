@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="20dp"
+    android:paddingTop="50dp"
+    tools:context="view.AboutFragment">
+
+    <TableRow
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp">
+
+        <TextView android:text="@string/battery_status" />
+
+        <TextView
+            android:id="@+id/bStatus"
+            android:text="" />
+    </TableRow>
+
+    <TableRow
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp">
+
+        <TextView android:text="@string/battery_level" />
+
+        <TextView
+            android:id="@+id/bLevel"
+            android:text="" />
+    </TableRow>
+
+    <TableRow
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp">
+
+        <TextView android:text="@string/temperature" />
+
+        <TextView
+            android:id="@+id/bTemperature"
+            android:text="" />
+    </TableRow>
+
+    <TableRow
+        android:layout_gravity="center_vertical|fill_vertical|center_horizontal|center"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp">
+
+        <TextView android:text="@string/battery_voltage" />
+
+        <TextView
+            android:id="@+id/bVoltage"
+            android:text="" />
+    </TableRow>
+
+    <TableRow
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp">
+
+        <TextView android:text="@string/battery_technology" />
+
+        <TextView
+            android:id="@+id/bTechnology"
+            android:text="" />
+    </TableRow>
+</TableLayout>

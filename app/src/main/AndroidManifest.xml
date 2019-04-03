@@ -9,13 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <receiver android:name="receiver.BatteryInfoReceiver" >
+            <intent-filter>
+                <action android:name="BatteryManager.BATTERY_STATUS_CHARGING" />
+                <action android:name="BatteryManager.BATTERY_STATUS_FULL" />
+            </intent-filter>
+        </receiver>
         <activity
-            android:name=".LandingActivity"
+            android:name="view.LandingActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

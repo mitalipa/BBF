@@ -1,8 +1,10 @@
-package com.app.mitali.bbf;
+package view;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,6 +14,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.app.mitali.bbf.R;
 
 public class LandingActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -80,22 +84,64 @@ public class LandingActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        Fragment fragment = null;
+        switch (id) {
+            case R.id.nav_general:
+                fragment = new GeneralFragment();
+                break;
+            case R.id.nav_notification:
+                fragment = new NotificationFragment();
+                break;
+            /*case R.id.nav_advanced_settings:
+                startAdvancedSettingsActivity();
+                break;
+            case R.id.nav_info:
+                startInfoActivity();
+                break;*/
+            case R.id.nav_about:
+                fragment = new AboutFragment();
+                break;
+           /* case R.id.nav_tips:
+                startTipsActivity();
+                break;*/
         }
+
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.nav_placeholder, fragment);
+        ft.commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    // region - Helper Methods
+
+    private void startAboutActivity() {
+
+    }
+
+    private void startAdvancedSettingsActivity() {
+
+    }
+
+    private void startGeneralActivity() {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.add(R.id.nav_placeholder, new GeneralFragment());
+        ft.commit();
+    }
+
+    private void startInfoActivity() {
+
+    }
+
+    private void startNotificationActivity() {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.nav_placeholder, new NotificationFragment());
+        ft.commit();
+    }
+
+    private void startTipsActivity() {
+    }
+
 }
